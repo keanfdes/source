@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Programming Solver</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Linear Programming Solver</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="A">Constraint Coefficients (A):</label>
+                <textarea name="A" rows="4" cols="50" placeholder="Enter constraint coefficients, one row per line, comma-separated"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="equalities">Comparison Operators:</label>
+                <input type="text" name="equalities" placeholder="Enter comparison operators, comma-separated">
+            </div>
+            <div class="form-group">
+                <label for="b">Right-hand Side (b):</label>
+                <input type="text" name="b" placeholder="Enter right-hand side values, comma-separated">
+            </div>
+            <div class="form-group">
+                <label for="c">Objective Function Coefficients (c):</label>
+                <input type="text" name="c" placeholder="Enter objective function coefficients, comma-separated">
+            </div>
+            <button type="submit">Solve</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <h2>Result:</h2>
+                <div>{{ result|safe }}</div>
+            </div>
+        {% endif %}
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
